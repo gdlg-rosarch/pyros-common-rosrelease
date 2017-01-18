@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pyros_common</name>
+  <version>0.4.0</version>
+  <description>
+    Common subpackages for Pyros framework
+  </description>
+
+  <license>BSD</license>
+
+  <url type="repository">https://github.com/asmodehn/pyros-common</url>
+  <url type="bugtracker">https://github.com/asmodehn/pyros-common/issues</url>
+
+  <author email="asmodehn@gmail.com">AlexV</author>
+  <maintainer email="asmodehn@gmail.com">AlexV</maintainer>
+
+  <buildtool_depend version_gte="0.6.18">catkin</buildtool_depend>
+  <build_depend version_gte="0.1.17">catkin_pip</build_depend>
+
+
+</package>
+
+
