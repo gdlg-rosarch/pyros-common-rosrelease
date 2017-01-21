@@ -10,10 +10,6 @@ project(pyros_common)
 # This assume catkin is installed along with a minimal ROS system.
 find_package(catkin REQUIRED COMPONENTS
     catkin_pip
-    rospy
-    rosgraph
-    roslaunch
-    rostest
 )
 
 # defining current package as a package that should be managed by pip (not catkin - even though we make it usable with workspaces)

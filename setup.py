@@ -42,9 +42,8 @@ class PrepareReleaseCommand(setuptools.Command):
 
         # TODO :
         # $ gitchangelog >CHANGELOG.rst
-        # $ git commit CHANGELOG.rst -m "updating changelog"
         # change version in code and changelog
-        subprocess.check_call("git commit CHANGELOG.rst pyros/_version.py -m 'v{0}'".format(__version__), shell=True)
+        subprocess.check_call("git commit CHANGELOG.rst pyros_common/_version.py -m 'v{0}'".format(__version__), shell=True)
         subprocess.check_call("git push", shell=True)
 
         print("You should verify travis checks, and you can publish this release with :")
@@ -61,6 +60,7 @@ class PublishCommand(setuptools.Command):
 
     def initialize_options(self):
         """init options"""
+        # TODO : register option
         pass
 
     def finalize_options(self):
@@ -163,7 +163,7 @@ class RosDevelopCommand(setuptools.Command):
 
 class ROSPublishCommand(setuptools.Command):
     """Command to release this package to Pypi"""
-    description = "releases pyros to ROS"
+    description = "releases pyros-common to ROS"
     user_options = []
 
     def initialize_options(self):
@@ -179,8 +179,8 @@ class ROSPublishCommand(setuptools.Command):
         # TODO : distro from parameter. default : ['indigo', 'jade', 'kinetic']
         subprocess.check_call("git tag -a ros-{0} -m 'version {0} for ROS'".format(__version__), shell=True)
         subprocess.check_call("git push --tags", shell=True)
-
-        subprocess.check_call("bloom-release --rosdistro indigo --track indigo pyros", shell=True)
+        # TODO : guess the ROS package name
+        subprocess.check_call("bloom-release --rosdistro indigo --track indigo pyros_common", shell=True)
         sys.exit()
 
 
