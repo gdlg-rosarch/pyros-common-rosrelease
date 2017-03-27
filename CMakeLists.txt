@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 # defining current package as a package that should be managed by pip (not catkin - even though we make it usable with workspaces)
-catkin_pip_setup()
-catkin_package()
+catkin_pip_package(pyros_common)
 
 
