@@ -1,0 +1,26 @@
+# We shouldnt need anything else than pure python here...
+# sudo: required
+# dist: trusty
+language: python
+
+branches:
+  except:
+    - gh-pages
+
+python:
+  - 2.7
+  #- 3.4
+  #- pypy
+  #- pypy3
+
+before_install:
+
+install:
+  - pip install tox tox-travis
+
+script:
+  - tox
+
+notifications:
+  email: false
+
