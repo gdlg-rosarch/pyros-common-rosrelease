@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from pyros_interfaces.common.transient_if import TransientIf
+from pyros_interfaces_common.transient_if import TransientIf
 
 
 class MockPublisher(TransientIf):
