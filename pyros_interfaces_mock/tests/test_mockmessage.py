@@ -4,7 +4,7 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-from pyros_interfaces.mock import extract_values, populate_instance, FieldTypeMismatchException, NonexistentFieldException, StatusMsg
+from pyros_interfaces_mock import extract_values, populate_instance, FieldTypeMismatchException, NonexistentFieldException, StatusMsg
 import nose
 from nose.tools import assert_true, assert_false, assert_raises
 
