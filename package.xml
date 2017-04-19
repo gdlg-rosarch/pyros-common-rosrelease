@@ -3,9 +3,9 @@
   <name>pyros_common</name>
   <!-- new name, from lunar distro
   <name>pyros_interfaces_common</name> -->
-  <version>0.4.1</version>
+  <version>0.4.2</version>
   <description>
-    Common subpackages for Pyros framework
+    Common interfaces packages for Pyros framework
   </description>
 
   <license>BSD</license>
