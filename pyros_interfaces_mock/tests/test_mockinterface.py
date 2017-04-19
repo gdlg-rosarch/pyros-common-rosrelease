@@ -6,8 +6,8 @@ import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')))
 
-from pyros_interfaces.mock import MockInterface
-from pyros_interfaces.mock import statusecho_service, MockService
+from pyros_interfaces_mock import MockInterface
+from pyros_interfaces_mock import statusecho_service, MockService
 
 from nose.tools import timed, assert_true, assert_false
 

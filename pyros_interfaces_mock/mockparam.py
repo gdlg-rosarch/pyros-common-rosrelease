@@ -1,6 +1,6 @@
 from __future__ import absolute_import, print_function
 
-from pyros_interfaces.common.transient_if import TransientIf
+from pyros_interfaces_common.transient_if import TransientIf
 
 
 class MockParam(TransientIf):
