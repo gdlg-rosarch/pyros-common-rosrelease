@@ -6,7 +6,7 @@ import tempfile
 import setuptools
 
 # Ref : https://packaging.python.org/single_source_version/#single-sourcing-the-version
-with open('pyros_interfaces/common/_version.py') as vf:
+with open('pyros_interfaces_common/_version.py') as vf:
     exec(vf.read())
 
 # Best Flow :
@@ -43,7 +43,7 @@ class PrepareReleaseCommand(setuptools.Command):
         # TODO :
         # $ gitchangelog >CHANGELOG.rst
         # change version in code and changelog
-        subprocess.check_call("git commit CHANGELOG.rst pyros_interfaces/common/_version.py -m 'v{0}'".format(__version__), shell=True)
+        subprocess.check_call("git commit CHANGELOG.rst pyros_interfaces_common/_version.py -m 'v{0}'".format(__version__), shell=True)
         subprocess.check_call("git push", shell=True)
 
         print("You should verify travis checks, and you can publish this release with :")
@@ -163,7 +163,7 @@ class RosDevelopCommand(setuptools.Command):
 
 class ROSPublishCommand(setuptools.Command):
     """Command to release this package to Pypi"""
-    description = "releases pyros-interfaces-common to ROS"
+    description = "releases pyros-common to ROS"
     user_options = []
 
     def initialize_options(self):
@@ -184,18 +184,22 @@ class ROSPublishCommand(setuptools.Command):
         sys.exit()
 
 
-setuptools.setup(name='pyros_interfaces.common',
+setuptools.setup(name='pyros-common',
+    # On PyPI :
+    # - pyros-common is the normal package. (python 2.7)
+    # - pyros-interfaces.common is the namespace package. (TODO : python 3 only if it makes sense ?)
+    # Use one or the other. careful to not create yet another one.
     version=__version__,
-    description='ROS Node to provide ROS introspection for non-ROS users.',
-    url='http://github.com/asmodehn/pyros',
+    description='Common interface packages for Pyros framework',
+    url='http://github.com/asmodehn/pyros-common',
     author='AlexV',
     author_email='asmodehn@gmail.com',
     license='BSD',
     packages=[
-        'pyros_interfaces',
-        'pyros_interfaces.common',
-        'pyros_interfaces.mock',
-        'pyros_interfaces.mock.tests',
+        'pyros_interfaces_common',
+        # mock always goes along with common (unless we find a bug with it and then we'll extract into his own package...)
+        'pyros_interfaces_mock',
+        'pyros_interfaces_mock.tests',
     ],
     # this is better than using package data ( since behavior is a bit different from distutils... )
     include_package_data=True,  # use MANIFEST.in during install.
@@ -220,5 +224,11 @@ setuptools.setup(name='pyros_interfaces.common',
         'rospublish': ROSPublishCommand,
     },
     zip_safe=False,  # TODO testing...
-    namespace_packages=['pyros_interfaces']
+
+    # NAMESPACE PACKAGE :
+    # This pyros_interfaces could be a pkg_resources namespace packages
+    # It is somehow compatible with ROS usage of python 2.7, even when generating messages.
+    # However, since we want to make it a ROS debian package,
+    #  and that python 2.7 does NOT support PEP 420 (without importlib2), it s better to keep it a normal package.
+
 )

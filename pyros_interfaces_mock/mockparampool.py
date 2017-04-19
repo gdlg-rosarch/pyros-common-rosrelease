@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 
-from pyros_interfaces.common.transient_if_pool import TransientIfPool
+from pyros_interfaces_common.transient_if_pool import TransientIfPool
 from .mockparam import MockParam
 from .mocksystem import (
     params_available_remote, params_available_type_remote,

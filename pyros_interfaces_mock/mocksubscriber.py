@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 from collections import deque
 
-from pyros_interfaces.common.transient_if import TransientIf
+from pyros_interfaces_common.transient_if import TransientIf
 
 
 class MockSubscriber(TransientIf):
