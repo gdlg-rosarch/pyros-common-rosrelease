@@ -10,6 +10,7 @@ Hopefully this should endup in ros.__doc__
 # create logger
 # TODO solve multiprocess logger problem(s)...
 _logger = logging.getLogger(__name__)
+_logger.addHandler(logging.NullHandler())
 
 # We do need to try to load from ROS environment, in case loading from python environment fails
 try:
