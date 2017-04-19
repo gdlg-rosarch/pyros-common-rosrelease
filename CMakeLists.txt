@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(pyros_common)
-
-# For ease of use, this CMakeLists allows to use this code from source, as if it were a normal catkin package.
-# However no ROS/catkin debian package is provided for it.
-# It is just a pip package that your packages should depend on (using rosdep pip dependency mechanism).
-# We should follow closely https://github.com/gerkey/ros1_external_use
+project(pyros_common)  # we need to follow ros package naming conventions here
+# TODO : change name from lunar distro to match python naming (we are now using namespaces)
 
 # Minimal Python module setup - catkin is assumed preinstalled along with ROS
 # This assume catkin is installed along with a minimal ROS system.
@@ -13,6 +9,24 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 # defining current package as a package that should be managed by pip (not catkin - even though we make it usable with workspaces)
-catkin_pip_package(pyros_common)
+catkin_pip_package(pyros_interfaces.common)
+
+
+
+## Unit tests
+if (CATKIN_ENABLE_TESTING)
+
+
+    ##############################################################################
+    # Nose Tests
+    ##############################################################################
+
+    # Careful this will not support parallel testing, due to multiprocess environment used in tests
+    catkin_add_nosetests(pyros_interfaces/mock/tests)
+
+    # TODO : run ROS tests with --no-skip to force them...
+
+endif()
+
 
 
