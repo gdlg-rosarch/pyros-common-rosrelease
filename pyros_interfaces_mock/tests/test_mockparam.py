@@ -8,7 +8,7 @@ import nose
 from nose.tools import assert_true
 import unittest
 
-from pyros_interfaces.mock import MockSystem
+from pyros_interfaces_mock import MockSystem
 
 
 class TestMockService(unittest.TestCase):

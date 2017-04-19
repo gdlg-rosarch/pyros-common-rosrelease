@@ -2,8 +2,20 @@ Changelog
 =========
 
 
-%%version%% (unreleased)
-------------------------
+0.4.2 (2017-04-19)
+------------------
+- Fixing setup.py to point to normal pyros-common package. [AlexV]
+- V0.4.2. [AlexV]
+- Fixing setup.py commands after pacakge structure change. [AlexV]
+- Dropping the namespace idea, since we cant make a working deb pkg out
+  of it. [AlexV]
+- Preparing ros release... [AlexV]
+
+
+0.4.1 (2017-04-19)
+------------------
+- V0.4.1. [AlexV]
+- Some setup.py commands fixes for release. [AlexV]
 - Changing tox tester to nose. [AlexV]
 - Moving ctx_server back to pyros to keep dependencies one-way. [AlexV]
 - Renaming test_pyros_mock for pytest to detect it. [AlexV]
