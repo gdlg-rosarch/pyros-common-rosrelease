@@ -11,7 +11,9 @@ find_package(catkin REQUIRED COMPONENTS
 # defining current package as a package that should be managed by pip (not catkin - even though we make it usable with workspaces)
 catkin_pip_package(pyros_interfaces.common)
 
-
+# Patching creating deb package from namespace package (implicit namespace packages PEP 420 is not implemented in py2.7 yet)
+install(FILES ns_patch/__init__.py
+        DESTINATION ${CATKIN_GLOBAL_PYTHON_DESTINATION}/pyros_interfaces)
 
 ## Unit tests
 if (CATKIN_ENABLE_TESTING)
