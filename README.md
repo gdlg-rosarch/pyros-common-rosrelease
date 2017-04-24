@@ -1,3 +1,26 @@
+## pyros_common (jade) - 0.4.2-0
+
+The packages in the `pyros_common` repository were released into the `jade` distro by running `/usr/bin/bloom-release --rosdistro jade --track jade pyros_common` on `Mon, 24 Apr 2017 06:41:33 -0000`
+
+The `pyros_common` package was released.
+
+Version of package(s) in repository `pyros_common`:
+
+- upstream repository: https://github.com/asmodehn/pyros-common.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.4.2-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.26`
+- catkin_pkg version: `0.3.1`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.6.2`
+- vcstools version: `0.1.39`
+
+
 ## pyros_common (indigo) - 0.4.2-0
 
 The packages in the `pyros_common` repository were released into the `indigo` distro by running `/usr/bin/bloom-release --rosdistro indigo --track indigo pyros_common` on `Wed, 19 Apr 2017 09:15:49 -0000`
