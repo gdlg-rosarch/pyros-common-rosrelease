@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>pyros_common</name>
-  <!-- new name, from kinetic distro
+  <!-- new name, from lunar distro
   <name>pyros_interfaces_common</name> -->
-  <version>0.4.2</version>
+  <version>0.4.1</version>
   <description>
-    Common interfaces packages for Pyros framework
+    Common subpackages for Pyros framework
   </description>
 
   <license>BSD</license>
