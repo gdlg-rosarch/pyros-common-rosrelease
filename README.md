@@ -1,3 +1,26 @@
+## pyros_common (kinetic) - 0.4.2-1
+
+The packages in the `pyros_common` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --rosdistro kinetic --track kinetic pyros_common` on `Wed, 28 Jun 2017 03:14:00 -0000`
+
+The `pyros_common` package was released.
+
+Version of package(s) in repository `pyros_common`:
+
+- upstream repository: https://github.com/asmodehn/pyros-common.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `0.4.2-0`
+- new version: `0.4.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.5.26`
+- catkin_pkg version: `0.3.5`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.6.2`
+- vcstools version: `0.1.39`
+
+
 ## pyros_common (kinetic) - 0.4.2-0
 
 The packages in the `pyros_common` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --rosdistro kinetic --track kinetic pyros_common` on `Wed, 28 Jun 2017 03:02:59 -0000`
